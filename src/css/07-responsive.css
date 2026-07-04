@@ -1,0 +1,17 @@
+/* src/css/responsive.css */
+@media (max-width: 768px) {
+  .choice-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /* 24px */
+    max-width: 400px; /* Limit width for single column to avoid too wide cards */
+  }
+
+  .landing-title {
+    font-size: 1.5rem; /* H3 from style guide */
+    margin-bottom: 2rem;
+  }
+
+  #app {
+    padding: 2rem 1rem; /* Reduce padding on mobile */
+  }
+}

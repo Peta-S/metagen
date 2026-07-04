@@ -1,0 +1,86 @@
+/* Base button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 0 16px; /* 16px horizontal padding as per style guide */
+  cursor: pointer;
+  text-decoration: none; /* For <a> tags styled as buttons */
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  height: 40px; /* Default height */
+  line-height: 1; /* Vertically center text with align-items */
+  font-size: 0.875rem; /* Body Small from style guide (14px) */
+  border: 1px solid transparent; /* Default transparent border */
+  box-shadow: none; /* No shadow by default */
+  -webkit-appearance: none; /* Remove default button styles for consistency */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-color: var(--button-bg);
+}
+
+.btn-primary:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--button-hover-bg);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 166, 156, 0.1); /* Using rgba from default primary-color for subtle hover */
+}
+
+/* Ghost Button */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: transparent; /* Explicitly transparent for ghost */
+}
+
+.btn-ghost:hover {
+  background-color: var(--border-color); /* Subtle background hover for ghost button */
+}
+
+/* Button Sizes */
+.btn-large {
+  height: 48px;
+  font-size: 1rem; /* Body text from style guide (16px) */
+  padding: 0 24px; /* Adjust padding for larger size */
+}
+
+.btn-small {
+  height: 32px;
+  font-size: 0.75rem; /* Smaller text */
+  padding: 0 12px; /* Adjust padding for smaller size */
+}
+
+/* Disable state */
+.btn:disabled, .btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-border {
+  border-color: var(--error-color);
+}
+
+.valid-border {
+  border-color: var(--success);
+}
+
+.alert-border {
+  border-color: var(--warning);
+}

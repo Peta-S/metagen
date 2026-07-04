@@ -1,0 +1,296 @@
+{
+  "gl_charset": {
+    "id": "gl_charset",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": null,
+    "userInfo": {
+      "label": "Charset",
+      "description": "Character encoding declaration. Must be the first tag.",
+      "exampleOutput": "<meta charset=\"utf-8\">"
+    },
+    "inputs": {
+      "charset": {
+        "type": "select",
+        "validation": {
+          "type": "enum",
+          "enum": [
+            "utf-8",
+            "ISO-8859-1"
+          ]
+        }
+      }
+    }
+  },
+  "gl_title": {
+    "id": "gl_title",
+    "multipleAllowed": false,
+    "tag": "title",
+    "presetAttributes": null,
+    "userInfo": {
+      "label": "Page Title",
+      "description": "The browser tab name and search result headline.",
+      "exampleOutput": "<title>Ultimate Meta Tag Generator | Test Sample</title>"
+    },
+    "inputs": {
+      "text": {
+        "type": "text",
+        "placeholder": "Page Title",
+        "validation": {
+          "type": "string",
+          "max": 70,
+          "recommendedMax": 60,
+          "warningMessage": "Titles over 60 characters are truncated by Google."
+        }
+      }
+    }
+  },
+  "gl_viewport": {
+    "id": "gl_viewport",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "viewport"
+    },
+    "userInfo": {
+      "label": "Viewport",
+      "description": "Mobile responsiveness settings.",
+      "exampleOutput": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "presetValue": "width=device-width, initial-scale=1, shrink-to-fit=no",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-z0-9\\s,:\\-_=\\.]*$",
+          "patternHelp": "Input contains invalid characters for this tag"
+        }
+      }
+    }
+  },
+  "gl_description": {
+    "id": "gl_description",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "description"
+    },
+    "userInfo": {
+      "label": "Meta Description",
+      "description": "The summary snippet in search results.",
+      "exampleOutput": "<meta name=\"description\" content=\"A comprehensive test output...\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "textarea",
+        "validation": {
+          "type": "string",
+          "min": 10,
+          "max": 300,
+          "recommendedMin": 150,
+          "recommendedMax": 160,
+          "warningMessage": "Keep between 150-160 chars for optimal click-through rates."
+        }
+      }
+    }
+  },
+  "gl_keywords": {
+    "id": "gl_keywords",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "keywords"
+    },
+    "userInfo": {
+      "label": "Keywords",
+      "description": "Comma separated keywords (legacy SEO).",
+      "exampleOutput": "<meta name=\"keywords\" content=\"meta tags, seo, developer tools\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^[^,]+(?:,\\s*[^,]*)*$",
+          "patternHelp": "Must be a comma-separated list."
+        } 
+      }
+    }
+  },
+  "gl_author": {
+    "id": "gl_author",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "author"
+    },
+    "userInfo": {
+      "label": "Author",
+      "description": "Name of the author or organization.",
+      "exampleOutput": "<meta name=\"author\" content=\"Senior Dev Team\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "gl_generator": {
+    "id": "gl_generator",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "generator"
+    },
+    "userInfo": {
+      "label": "Generator",
+      "description": "Software used to generate the page.",
+      "exampleOutput": "<meta name=\"generator\" content=\"MyMetaGen v1.0\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "gl_robots": {
+    "id": "gl_robots",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "robots"
+    },
+    "userInfo": {
+      "label": "Robots",
+      "description": "Crawling directives for bots.",
+      "exampleOutput": "<meta name=\"robots\" content=\"index, follow, max-image-preview:large...\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "index, follow",
+        "presetValue": "index, follow, max-image-preview:large",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-z0-9\\s,:\\-_]*$",
+          "patternHelp": "Input contains invalid characters for this tag"
+        },
+        "comment": "Hard Coded for Testing: This field currently combines index, follow, and advanced robots directives. It might be split into separate fields (gl_robots_index, gl_robots_follow, gl_robots_advanced) in a future refactor if more granular control is required. For now, it accepts a comma-separated string of directives."
+      }
+    }
+  },
+  "gl_theme_color": {
+    "id": "gl_theme_color",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "theme-color"
+    },
+    "userInfo": {
+      "label": "Theme Color",
+      "description": "Browser UI color (mobile address bar).",
+      "exampleOutput": "<meta name=\"theme-color\" content=\"#3b5998\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "color",
+        "validation": {
+          "type": "color",
+          "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+          "patternHelp": "Must be a valid Hex color code."
+        }
+      }
+    }
+  },
+  "gl_referrer": {
+    "id": "gl_referrer",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "referrer"
+    },
+    "userInfo": {
+      "label": "Referrer Policy",
+      "description": "Controls how much referrer information is sent.",
+      "exampleOutput": "<meta name=\"referrer\" content=\"strict-origin-when-cross-origin\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "select",
+        "validation": {
+          "type": "enum",
+          "enum": [
+            "no-referrer",
+            "no-referrer-when-downgrade",
+            "origin",
+            "origin-when-cross-origin",
+            "same-origin",
+            "strict-origin",
+            "strict-origin-when-cross-origin",
+            "unsafe-url"
+          ]
+        }
+      }
+    }
+  },
+  "gl_color_scheme": {
+    "id": "gl_color_scheme",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "color-scheme"
+    },
+    "userInfo": {
+      "label": "Color Scheme",
+      "description": "Indicates preference for dark or light modes.",
+      "exampleOutput": "<meta name=\"color-scheme\" content=\"dark light\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "select",
+        "validation": {
+          "type": "enum",
+          "enum": [
+            "light",
+            "dark",
+            "light dark",
+            "dark light",
+            "only light",
+            "normal"
+          ]
+        }
+      }
+    }
+  },
+  "gl_format_detection": {
+    "id": "gl_format_detection",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "format-detection"
+    },
+    "userInfo": {
+      "label": "Format Detection",
+      "description": "Prevent auto-linking of phone numbers/dates.",
+      "exampleOutput": "<meta name=\"format-detection\" content=\"telephone=no\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^(telephone|date|address|email)=(no|yes)(,\\s*(telephone|date|address|email)=(no|yes))*$",
+          "patternHelp": "Input contains invalid characters for this tag"
+        },
+        "patternHelp": "Typically 'telephone=no' to prevent auto-linking phone numbers on iOS."
+      }
+    }
+  }
+}

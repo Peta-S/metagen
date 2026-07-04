@@ -1,0 +1,112 @@
+{
+  "art_authorUrl": {
+    "id": "art_authorUrl",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "article:author"
+    },
+    "userInfo": {
+      "label": "Article Author URL",
+      "description": "Facebook profile URL of the author.",
+      "exampleOutput": "<meta property=\"article:author\" content=\"https://www.facebook.com/seniordev\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., https://www.facebook.com/yourprofile",
+        "validation": {
+          "type": "url",
+          "pattern": "^(https?:\/\/)?(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z]{2,6}(\/[-a-zA-Z0-9@:%_\\+.~#?&=]*)*\/?$",
+          "patternHelp": "Must be a valid url."
+        }
+      }
+    },
+    "condition": {
+      "field": "og_type",
+      "value": "article"
+    }
+  },
+  "art_modifiedTime": {
+    "id": "art_modifiedTime",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "article:modified_time"
+    },
+    "userInfo": {
+      "label": "Article Modified Time",
+      "description": "ISO 8601 Datetime.",
+      "exampleOutput": "<meta property=\"article:modified_time\" content=\"2023-10-28T09:30:00+00:00\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., 2023-10-28T09:30:00+00:00",
+        "validation": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.*$",
+          "patternHelp": "Must be a valid ISO 8601 date string."
+        }
+      }
+    },
+    "condition": {
+      "field": "og_type",
+      "value": "article"
+    }
+  },
+  "art_publishedTime": {
+    "id": "art_publishedTime",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "article:published_time"
+    },
+    "userInfo": {
+      "label": "Article Published Time",
+      "description": "ISO 8601 Datetime.",
+      "exampleOutput": "<meta property=\"article:published_time\" content=\"2023-10-27T14:00:00+00:00\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., 2023-10-27T14:00:00+00:00",
+        "validation": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.*$",
+          "patternHelp": "Must be a valid ISO 8601 date string."
+        }
+      }
+    },
+    "condition": {
+      "field": "og_type",
+      "value": "article"
+    }
+  },
+  "art_tags": {
+    "id": "art_tags",
+    "multipleAllowed": true,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "article:tag"
+    },
+    "userInfo": {
+      "label": "Article Tags",
+      "description": "Tags associated with the article.",
+      "exampleOutput": "<meta property=\"article:tag\" content=\"Web Development\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., Web Development",
+        "validation": {
+          "type": "string"
+        }
+      }
+    },
+    "condition": {
+      "field": "og_type",
+      "value": "article"
+    }
+  }
+}

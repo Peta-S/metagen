@@ -1,0 +1,182 @@
+{
+  "res_canonical": {
+    "id": "res_canonical",
+    "multipleAllowed": false,
+    "tag": "link",
+    "presetAttributes": {
+      "rel": "canonical"
+    },
+    "userInfo": {
+      "label": "Canonical URL",
+      "description": "The preferred version of a web page.",
+      "exampleOutput": "<link rel=\"canonical\" href=\"https://example.com/sample-page\">"
+    },
+    "inputs": {
+      "href": {
+        "type": "text",
+        "placeholder": "Enter Canonical URL",
+        "validation": {
+          "type": "url",
+          "pattern": "^https?://.+",
+          "patternHelp": "Must be an absolute URL starting with http:// or https://"
+        }
+      }
+    }
+  },
+  "res_shortlink": {
+    "id": "res_shortlink",
+    "multipleAllowed": false,
+    "tag": "link",
+    "presetAttributes": {
+      "rel": "shortlink"
+    },
+    "userInfo": {
+      "label": "Shortlink",
+      "description": "A shortened version of the URL.",
+      "exampleOutput": "<link rel=\"shortlink\" href=\"https://ex.co/xyz\">"
+    },
+    "inputs": {
+      "href": {
+        "type": "text",
+        "placeholder": "Enter Shortlink URL",
+        "validation": {
+          "type": "url",
+          "pattern": "^https?://.+",
+          "patternHelp": "Must be an absolute URL starting with http:// or https://"
+        }
+      }
+    }
+  },
+  "res_preconnect": {
+    "id": "res_preconnect",
+    "multipleAllowed": true,
+    "tag": "link",
+    "presetAttributes": {
+      "rel": "preconnect"
+    },
+    "userInfo": {
+      "label": "Preconnect",
+      "description": "Establish network connections early. (Accepts multiple)",
+      "exampleOutput": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">"
+    },
+    "inputs": {
+      "href": {
+        "type": "text",
+        "placeholder": "Enter URL to preconnect",
+        "validation": {
+          "type": "url",
+          "pattern": "^https?://.+",
+          "patternHelp": "Must be an absolute URL."
+        }
+      }
+    }
+  },
+  "res_preconnect_crossorigin": {
+    "id": "res_preconnect_crossorigin",
+    "multipleAllowed": true,
+    "tag": "link",
+    "presetAttributes": {
+      "rel": "preconnect",
+      "crossorigin": ""
+    },
+    "userInfo": {
+      "label": "Preconnect (Cross-origin)",
+      "description": "Preconnect to CORS origins like font CDNs. (Accepts multiple)",
+      "exampleOutput": "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>"
+    },
+    "inputs": {
+      "href": {
+        "type": "text",
+        "placeholder": "Enter cross-origin URL to preconnect",
+        "validation": {
+          "type": "url",
+          "pattern": "^https?://.+",
+          "patternHelp": "Must be an absolute URL."
+        }
+      }
+    }
+  },
+  "res_dnsPrefetch": {
+    "id": "res_dnsPrefetch",
+    "multipleAllowed": true,
+    "tag": "link",
+    "presetAttributes": {
+      "rel": "dns-prefetch"
+    },
+    "userInfo": {
+      "label": "DNS Prefetch",
+      "description": "Resolve domain names before user clicks.",
+      "exampleOutput": "<link rel=\"dns-prefetch\" href=\"https://www.google-analytics.com\">"
+    },
+    "inputs": {
+      "href": {
+        "type": "text",
+        "placeholder": "Enter URL for DNS prefetch",
+        "validation": {
+          "type": "url",
+          "pattern": "^(https?:\/\/)?(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z]{2,6}(\/[-a-zA-Z0-9@:%_\\+.~#?&=]*)*\/?$",
+          "patternHelp": "Must be a valid url."
+        }
+      }
+    }
+  },
+  "res_manifest": {
+    "id": "res_manifest",
+    "multipleAllowed": false,
+    "tag": "link",
+    "presetAttributes": {
+      "rel": "manifest"
+    },
+    "userInfo": {
+      "label": "Web App Manifest",
+      "description": "Link to manifest.json for PWA.",
+      "exampleOutput": "<link rel=\"manifest\" href=\"/manifest.json\">"
+    },
+    "inputs": {
+      "href": {
+        "type": "text",
+        "presetValue": "/manifest.json",
+        "placeholder": "e.g., /manifest.json",
+        "validation": {
+          "type": "string",
+          "pattern": ".*\\.(json|webmanifest)$",
+          "patternHelp": "Usually ends in .json"
+        }
+      }
+    }
+  },
+  "res_alternates": {
+    "id": "res_alternates",
+    "multipleAllowed": true,
+    "tag": "link",
+    "presetAttributes": {
+      "rel": "alternate"
+    },
+    "userInfo": {
+      "label": "Hreflang Alternates",
+      "description": "Language/Regional URL variations.",
+      "exampleOutput": "<link rel=\"alternate\" hreflang=\"es\" href=\"...\">"
+    },
+    "inputs": {
+      "hreflang": {
+        "type": "text",
+        "placeholder": "e.g., en-US",
+        "validation": {
+          "type": "string",
+          "pattern": "^(?:x-default|[a-zA-Z]{2,3}(?:-[a-zA-Z]{2}(?:-[a-zA-Z0-9]+)*)?)$",
+          "patternHelp": "hreflang requires valid ISO language codes (e.g. 'en-US')."
+        }
+      },
+      "href": {
+        "type": "text",
+        "placeholder": "Enter URL",
+        "validation": {
+          "type": "url",
+          "pattern": "^(https?:\/\/)?(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z]{2,6}(\/[-a-zA-Z0-9@:%_\\+.~#?&=]*)*\/?$",
+          "patternHelp": "Must be a valid url."
+        }
+      }
+    }
+  }
+}
+

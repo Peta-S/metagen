@@ -1,0 +1,211 @@
+{
+  "httpEquiv_csp": {
+    "id": "httpEquiv_csp",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "http-equiv": "Content-Security-Policy"
+    },
+    "userInfo": {
+      "label": "Content Security Policy",
+      "description": "A security layer that helps to detect and mitigate certain types of attacks, including Cross-Site Scripting (XSS) and data injection attacks.",
+      "exampleOutput": "<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'self'...\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "patternHelp": "Syntax can be very strict (e.g., default-src 'self'; script-src 'self' https://apis.google.com).",
+          "pattern": "^[a-zA-Z0-9\\s,:\\-_\\.;'/*+?()=]*$"
+        }
+      }
+    }
+  },
+  "httpEquiv_uaCompatible": {
+    "id": "httpEquiv_uaCompatible",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "http-equiv": "X-UA-Compatible"
+    },
+    "userInfo": {
+      "label": "X-UA-Compatible",
+      "description": "Legacy directive to specify the document mode for Internet Explorer.",
+      "exampleOutput": "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "select",
+        "validation": {
+          "type": "enum",
+          "enum": [
+            "IE=edge",
+            "IE=EmulateIE7",
+            "IE=EmulateIE8"
+          ]
+        }
+      }
+    }
+  },
+  "httpEquiv_refresh": {
+    "id": "httpEquiv_refresh",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "http-equiv": "refresh"
+    },
+    "userInfo": {
+      "label": "Refresh / Redirect",
+      "description": "Reloads the page or redirects to a new URL after a specified number of seconds.",
+      "exampleOutput": "<meta http-equiv=\"refresh\" content=\"30;url=https://example.com/\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-z0-9\\s,:\\-_;\\.\\/=]*$",
+          "patternHelp": "Enter seconds (e.g., '30') or seconds and a URL (e.g., '30; url=https://example.com/').",
+          "warningMessage": "Auto-refreshing can negatively impact user experience and accessibility."
+        }
+      }
+    }
+  },
+  "itemprop_name": {
+    "id": "itemprop_name",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "itemprop": "name"
+    },
+    "userInfo": {
+      "label": "Schema Name (itemprop)",
+      "description": "Name attribute for Schema.org microdata. Should correspond to the vocabulary on Schema.org.",
+      "exampleOutput": "<meta itemprop=\"name\" content=\"Ultimate Meta Tag Generator\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "recommendedMax": 70
+        }
+      }
+    }
+  },
+  "itemprop_description": {
+    "id": "itemprop_description",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "itemprop": "description"
+    },
+    "userInfo": {
+      "label": "Schema Description (itemprop)",
+      "description": "Description attribute for Schema.org microdata. Should correspond to the vocabulary on Schema.org.",
+      "exampleOutput": "<meta itemprop=\"description\" content=\"A tool for web developers.\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "textarea",
+        "validation": {
+          "type": "string",
+          "recommendedMax": 200
+        }
+      }
+    }
+  },
+  "itemprop_image": {
+    "id": "itemprop_image",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "itemprop": "image"
+    },
+    "userInfo": {
+      "label": "Schema Image (itemprop)",
+      "description": "Image attribute for Schema.org microdata. Should correspond to the vocabulary on Schema.org.",
+      "exampleOutput": "<meta itemprop=\"image\" content=\"https://example.com/image.jpg\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "url",
+        "validation": {
+          "type": "url",
+          "pattern": "\\.(jpg|jpeg|png|gif|webp)$",
+          "patternHelp": "URL should end with a valid image extension (e.g., .jpg, .png)."
+        }
+      }
+    }
+  },
+  "ver_google": {
+    "id": "ver_google",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "google-site-verification"
+    },
+    "userInfo": {
+      "label": "Google Site Verification",
+      "description": "Token from Google Search Console to prove ownership of a property.",
+      "exampleOutput": "<meta name=\"google-site-verification\" content=\"VerificationString123\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "patternHelp": "A case-sensitive alphanumeric token, which may include dashes or underscores."
+        }
+      }
+    }
+  },
+  "ver_yandex": {
+    "id": "ver_yandex",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "yandex-verification"
+    },
+    "userInfo": {
+      "label": "Yandex Verification",
+      "description": "Token from Yandex Webmaster to prove ownership.",
+      "exampleOutput": "<meta name=\"yandex-verification\" content=\"VerificationString456\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$",
+          "patternHelp": "A case-sensitive hexadecimal token."
+        }
+      }
+    }
+  },
+  "ver_bing": {
+    "id": "ver_bing",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "msvalidate.01"
+    },
+    "userInfo": {
+      "label": "Bing Verification",
+      "description": "Token from Bing Webmaster Tools to prove ownership.",
+      "exampleOutput": "<meta name=\"msvalidate.01\" content=\"BingVerificationString789\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$",
+          "patternHelp": "A case-sensitive alphanumeric token."
+        }
+      }
+    }
+  }
+}

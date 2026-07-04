@@ -1,0 +1,197 @@
+/* src/css/forms.css */
+
+.form-group {
+  margin-bottom: 1.5rem; /* 24px spacing */
+  width: 100%;
+}
+
+.manual-entry-form {
+  width: 100%;
+  max-width: 600px; /* Max width for the form */
+  margin-bottom: 2rem; /* Space before navigation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem; /* Body Small */
+  font-weight: 500;
+  margin-bottom: 0.5rem; /* 8px */
+  color: var(--text-color);
+  text-align: left;
+  width: 100%; /* Ensure label takes full width */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem; /* Adjust padding for better look */
+  font-size: 1rem; /* Body */
+  line-height: 1.5;
+  color: var(--text-color);
+  background-color: var(--card-bg); /* Use card background for inputs */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-appearance: none; /* Remove default styles for consistency */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2); /* Focus state */
+  outline: none;
+}
+
+textarea {
+  min-height: 80px; /* Minimum height for textareas */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+select {
+  padding-right: 2.5rem; /* Space for custom arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%236B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.5rem;
+}
+
+/* Form Helper Text and Character Counter */
+.form-helper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem; /* 8px */
+  font-size: 0.875rem; /* Body Small */
+}
+
+.help-text {
+  color: var(--text-secondary);
+  flex-grow: 1; /* Allow it to take available space */
+  text-align: left;
+}
+
+.char-counter {
+  color: var(--text-secondary);
+  min-width: 45px; /* Ensure space for counter */
+  text-align: right;
+}
+
+/* Error State */
+input.is-error,
+textarea.is-error,
+select.is-error {
+  border-color: var(--error-color, #EF4444); /* Red from style guide */
+}
+
+input.is-error:focus,
+textarea.is-error:focus,
+select.is-error:focus {
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2); /* Red focus shadow */
+}
+
+.error-message {
+  color: var(--error-color, #EF4444);
+}
+
+.alert-message {
+  color: var(--warning, #f4a108);
+}
+
+/* Disabled State */
+input:disabled,
+textarea:disabled,
+select:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: var(--border-color); /* Lighter background for disabled */
+}
+
+/* Checkbox group styling */
+.form-group.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Adjust spacing */
+  width: 100%;
+  max-width: 600px; /* Align with form max-width */
+  text-align: left; /* Align checkbox group left */
+}
+
+.form-group.checkbox-group input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  /* Custom checkbox styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--card-bg);
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.form-group.checkbox-group input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.form-group.checkbox-group input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.25rem;
+  height: 0.5rem;
+  border: solid var(--button-text); /* Use button text color for checkmark */
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+.form-group.checkbox-group label {
+  margin-bottom: 0; /* No extra margin for checkbox label */
+  display: inline-flex; /* Keep label with checkbox */
+  align-items: center;
+  width: auto; /* Allow label to size naturally */
+  font-weight: 400; /* Regular weight for checkbox label */
+  cursor: pointer;
+}
+
+/* Info button styling */
+.info-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-secondary); /* Use secondary text color for icon */
+  margin-left: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  transition: color 0.2s ease;
+}
+
+.info-button:hover {
+  color: var(--primary-color);
+}
+
+.info-button svg {
+  display: block; /* Remove extra space below inline svg */
+}
+
+/* Add error color to theme.css */
+/* :root { --error-color: #EF4444; } */
+/* @media (prefers-color-scheme: dark) { :root { --error-color: #F87171; } } */

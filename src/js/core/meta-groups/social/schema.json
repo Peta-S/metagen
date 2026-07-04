@@ -1,0 +1,490 @@
+{
+  "fb_facebookAppId": {
+    "id": "fb_facebookAppId",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "fb:app_id"
+    },
+    "userInfo": {
+      "label": "Facebook App ID",
+      "description": "Numeric ID for Facebook Insights.",
+      "exampleOutput": "<meta property=\"fb:app_id\" content=\"1234567890\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., 1234567890",
+        "validation": {
+          "type": "string",
+          "pattern": "^[0-9]+$",
+          "patternHelp": "App ID must be numeric."
+        }
+      }
+    }
+  },
+    "og_title": {
+    "id": "og_title",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:title"
+    },
+    "userInfo": {
+      "label": "OG Title",
+      "description": "Title of the object (Max 95 chars).",
+      "exampleOutput": "<meta property=\"og:title\" content=\"Ultimate Meta Tag Generator\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., My Awesome Article",
+        "validation": {
+          "type": "string",
+          "max": 95,
+          "recommendedMax": 60,
+          "warningMessage": "Keep under 60 characters to avoid truncation on mobile."
+        }
+      }
+    }
+  },
+  "og_description": {
+    "id": "og_description",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:description"
+    },
+    "userInfo": {
+      "label": "OG Description",
+      "description": "One to two sentences description.",
+      "exampleOutput": "<meta property=\"og:description\" content=\"A comprehensive test...\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "textarea",
+        "placeholder": "e.g., A brief summary of the content...",
+        "validation": {
+          "type": "string",
+          "max": 200,
+          "recommendedMax": 65,
+          "warningMessage": "Facebook often truncates descriptions after 2-4 lines."
+        }
+      }
+    }
+  },
+    "og_siteName": {
+    "id": "og_siteName",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:site_name"
+    },
+    "userInfo": {
+      "label": "Site Name",
+      "description": "Name of the overall website.",
+      "exampleOutput": "<meta property=\"og:site_name\" content=\"Meta Tag Generator\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., My Website",
+        "validation": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "og_type": {
+    "id": "og_type",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:type"
+    },
+    "userInfo": {
+      "label": "OG Type",
+      "description": "The type of object.",
+      "exampleOutput": "<meta property=\"og:type\" content=\"article\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "select",
+        "validation": {
+          "type": "enum",
+          "enum": [
+            "website",
+            "article",
+            "book",
+            "profile",
+            "product",
+            "video.movie",
+            "music.song"
+          ]
+        }
+      }
+    }
+  },
+  "og_url": {
+    "id": "og_url",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:url"
+    },
+    "userInfo": {
+      "label": "OG URL",
+      "description": "The canonical URL for the Open Graph object.",
+      "exampleOutput": "<meta property=\"og:url\" content=\"https://example.com/sample-page\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., https://example.com/page",
+        "validation": {
+          "type": "url",
+          "pattern": "^https?://.+",
+          "patternHelp": "Must be an absolute URL."
+        }
+      }
+    }
+  },
+  "og_locale": {
+    "id": "og_locale",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:locale"
+    },
+    "userInfo": {
+      "label": "Locale",
+      "description": "The locale of the content.",
+      "exampleOutput": "<meta property=\"og:locale\" content=\"en_US\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., en_US",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-z]{2}_[A-Z]{2}$",
+          "patternHelp": "Format must be ll_CC (e.g. en_US)."
+        }
+      }
+    }
+  },
+  "og_localeAlternates": {
+    "id": "og_localeAlternates",
+    "multipleAllowed": true,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:locale:alternate"
+    },
+    "userInfo": {
+      "label": "Locale Alternate",
+      "description": "Alternate locales available.",
+      "exampleOutput": "<meta property=\"og:locale:alternate\" content=\"es_ES\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., es_ES",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-z]{2}_[A-Z]{2}$",
+          "patternHelp": "Format must be ll_CC (e.g. en_US)."
+        }
+      }
+    }
+  },
+  "og_image_url": {
+    "id": "og_image_url",
+    "multipleAllowed": true,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:image"
+    },
+    "userInfo": {
+      "label": "OG Image URL",
+      "description": "An image URL which should represent your object within the graph.",
+      "exampleOutput": "<meta property=\"og:image\" content=\"https://example.com/image.jpg\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., https://example.com/image.jpg",
+        "validation": {
+          "type": "url",
+          "pattern": "^https?://.+\\.(jpg|jpeg|png|gif|webp)$",
+          "patternHelp": "Must be a valid image file."
+        }
+      }
+    }
+  },
+  "og_image_width": {
+    "id": "og_image_width",
+    "multipleAllowed": true,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:image:width"
+    },
+    "userInfo": {
+      "label": "OG Image Width",
+      "description": "The width of the image in pixels.",
+      "exampleOutput": "<meta property=\"og:image:width\" content=\"1200\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "number",
+        "placeholder": "1200",
+        "validation": {
+          "type": "number",
+          "min": 1,
+          "step": 1,
+          "recommendedMin": 1200,
+          "integer": true
+        }
+      }
+    }
+  },
+  "og_image_height": {
+    "id": "og_image_height",
+    "multipleAllowed": true,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:image:height"
+    },
+    "userInfo": {
+      "label": "OG Image Height",
+      "description": "The height of the image in pixels.",
+      "exampleOutput": "<meta property=\"og:image:height\" content=\"630\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "number",
+        "placeholder": "630",
+        "validation": {
+          "type": "number",
+          "min": 1,
+          "step": 1,
+          "recommendedMin": 630,
+          "integer": true
+        }
+      }
+    }
+  },
+  "og_image_alt": {
+    "id": "og_image_alt",
+    "multipleAllowed": true,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:image:alt"
+    },
+    "userInfo": {
+      "label": "OG Image Alt Text",
+      "description": "A description of the image for accessibility and SEO.",
+      "exampleOutput": "<meta property=\"og:image:alt\" content=\"Description of the image\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., Logo of the company",
+        "validation": {
+          "type": "string",
+          "required": true
+        }
+      }
+    }
+  },
+  "og_image_type": {
+    "id": "og_image_type",
+    "multipleAllowed": true,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "og:image:type"
+    },
+    "userInfo": {
+      "label": "OG Image MIME Type",
+      "description": "The MIME type of the image.",
+      "exampleOutput": "<meta property=\"og:image:type\" content=\"image/jpeg\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., image/jpeg",
+        "validation": {
+          "type": "string",
+          "pattern": "^image/(jpeg|png|gif|webp)$"
+        }
+      }
+    }
+  },
+  "twt_card": {
+    "id": "twt_card",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:card"
+    },
+    "userInfo": {
+      "label": "Twitter Card Type",
+      "description": "The type of card to be created.",
+      "exampleOutput": "<meta name=\"twitter:card\" content=\"summary_large_image\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "select",
+        "validation": {
+          "type": "enum",
+          "enum": [
+            "summary",
+            "summary_large_image",
+            "app",
+            "player"
+          ]
+        }
+      }
+    }
+  },
+  "twt_creator": {
+    "id": "twt_creator",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:creator"
+    },
+    "userInfo": {
+      "label": "Twitter Creator",
+      "description": "@username for the content creator / author.",
+      "exampleOutput": "<meta name=\"twitter:creator\" content=\"@SeniorDev\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., @SeniorDev",
+        "validation": {
+          "type": "string",
+          "pattern": "^@?(\\w){1,15}$",
+          "patternHelp": "Must be a valid Twitter handle (e.g. @username)."
+        }
+      }
+    }
+  },
+  "twt_description": {
+    "id": "twt_description",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:description"
+    },
+    "userInfo": {
+      "label": "Twitter Description",
+      "description": "Description of content (falls back to og:description).",
+      "exampleOutput": "<meta name=\"twitter:description\" content=\"A comprehensive test output...\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "textarea",
+        "placeholder": "e.g., A short description for Twitter...",
+        "validation": {
+          "type": "string",
+          "max": 200
+        }
+      }
+    }
+  },
+  "twt_image": {
+    "id": "twt_image",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:image"
+    },
+    "userInfo": {
+      "label": "Twitter Image",
+      "description": "Image for the card (falls back to og:image).",
+      "exampleOutput": "<meta name=\"twitter:image\" content=\"https://example.com/uploads/og-landscape.jpg\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., https://example.com/image.jpg",
+        "validation": {
+          "type": "url",
+          "pattern": "\\.(jpg|jpeg|png|gif|webp)$",
+          "patternHelp": "Must be a valid image file."
+        }
+      }
+    }
+  },
+  "twt_imageAlt": {
+    "id": "twt_imageAlt",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:image:alt"
+    },
+    "userInfo": {
+      "label": "Twitter Image Alt",
+      "description": "Alt text for the Twitter image. Crucial for accessibility.",
+      "exampleOutput": "<meta name=\"twitter:image:alt\" content=\"Dashboard view\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., Alt text for the Twitter image",
+        "validation": {
+          "type": "string",
+          "max": 420
+        }
+      }
+    }
+  },
+  "twt_site": {
+    "id": "twt_site",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:site"
+    },
+    "userInfo": {
+      "label": "Twitter Site",
+      "description": "@username for the website.",
+      "exampleOutput": "<meta name=\"twitter:site\" content=\"@MetaGenApp\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., @MetaGenApp",
+        "validation": {
+          "type": "string",
+          "pattern": "^@?(\\w){1,15}$",
+          "patternHelp": "Must be a valid Twitter handle (e.g. @username)."
+        }
+      }
+    }
+  },
+  "twt_title": {
+    "id": "twt_title",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:title"
+    },
+    "userInfo": {
+      "label": "Twitter Title",
+      "description": "Title of the content (falls back to og:title).",
+      "exampleOutput": "<meta name=\"twitter:title\" content=\"Ultimate Meta Tag Generator\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "placeholder": "e.g., My Twitter Post Title",
+        "validation": {
+          "type": "string",
+          "max": 70
+        }
+      }
+    }
+  }
+}

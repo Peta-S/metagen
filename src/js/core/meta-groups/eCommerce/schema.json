@@ -1,0 +1,412 @@
+{
+  "ec_priceAmount": {
+    "id": "ec_priceAmount",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:price:amount"
+    },
+    "userInfo": {
+      "label": "Price Amount",
+      "description": "The price of the product.",
+      "exampleOutput": "<meta property=\"product:price:amount\" content=\"19.99\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "number",
+        "validation": {
+          "type": "number",
+          "min": 0
+        }
+      }
+    }
+  },
+  "ec_priceCurrency": {
+    "id": "ec_priceCurrency",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:price:currency"
+    },
+    "userInfo": {
+      "label": "Price Currency",
+      "description": "The currency of the price (e.g., USD, EUR).",
+      "exampleOutput": "<meta property=\"product:price:currency\" content=\"USD\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$",
+          "patternHelp": "Must be a 3-letter currency code (e.g., USD)."
+        }
+      }
+    }
+  },
+  "ec_availability": {
+    "id": "ec_availability",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:availability"
+    },
+    "userInfo": {
+      "label": "Availability",
+      "description": "The availability of the product.",
+      "exampleOutput": "<meta property=\"product:availability\" content=\"in stock\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "select",
+        "options": [
+          "in stock",
+          "out of stock",
+          "preorder",
+          "available for order",
+          "discontinued"
+        ],
+        "validation": {
+          "type": "enum",
+          "enum": [
+            "in stock",
+            "out of stock",
+            "preorder",
+            "available for order",
+            "discontinued"
+          ]
+        }
+      }
+    }
+  },
+  "ec_brand": {
+    "id": "ec_brand",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:brand"
+    },
+    "userInfo": {
+      "label": "Brand",
+      "description": "The brand of the product.",
+      "exampleOutput": "<meta property=\"product:brand\" content=\"Acme Inc.\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "maxLength": 100
+        }
+      }
+    }
+  },
+  "ec_condition": {
+    "id": "ec_condition",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:condition"
+    },
+    "userInfo": {
+      "label": "Condition",
+      "description": "The condition of the product.",
+      "exampleOutput": "<meta property=\"product:condition\" content=\"new\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "select",
+        "options": [
+          "new",
+          "used",
+          "refurbished"
+        ],
+        "validation": {
+          "type": "enum",
+          "enum": [
+            "new",
+            "used",
+            "refurbished"
+          ]
+        }
+      }
+    }
+  },
+  "ec_retailerItemId": {
+    "id": "ec_retailerItemId",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:retailer_item_id"
+    },
+    "userInfo": {
+      "label": "Retailer Item ID",
+      "description": "Unique identifier for the product from the retailer.",
+      "exampleOutput": "<meta property=\"product:retailer_item_id\" content=\"SKU12345\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "minLength": 1,
+          "maxLength": 50,
+          "patternHelp": "Alphanumeric characters, hyphens, and underscores only."
+        }
+      }
+    }
+  },
+  "ec_itemGroupId": {
+    "id": "ec_itemGroupId",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:item_group_id"
+    },
+    "userInfo": {
+      "label": "Item Group ID",
+      "description": "The item group ID for the product.",
+      "exampleOutput": "<meta property=\"product:item_group_id\" content=\"GROUP-789\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "minLength": 1,
+          "maxLength": 50,
+          "patternHelp": "Alphanumeric characters, hyphens, and underscores only."
+        }
+      }
+    }
+  },
+  "ec_category": {
+    "id": "ec_category",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:category"
+    },
+    "userInfo": {
+      "label": "Category",
+      "description": "The product category.",
+      "exampleOutput": "<meta property=\"product:category\" content=\"Electronics > Audio > Headphones\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "maxLength": 200
+        }
+      }
+    }
+  },
+  "ec_product_id": {
+    "id": "ec_product_id",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:product_id"
+    },
+    "userInfo": {
+      "label": "Product ID",
+      "description": "Unique identifier for the product, often SKU or GTIN.",
+      "exampleOutput": "<meta property=\"product:product_id\" content=\"A123B456\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "pattern": "^[a-zA-Z0-9_-]+$",
+          "patternHelp": "Alphanumeric characters, hyphens, and underscores only."
+        }
+      }
+    }
+  },
+  "ec_gtin": {
+    "id": "ec_gtin",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:gtin"
+    },
+    "userInfo": {
+      "label": "Global Trade Item Number (GTIN)",
+      "description": "Global Trade Item Number (e.g., UPC, EAN, ISBN).",
+      "exampleOutput": "<meta property=\"product:gtin\" content=\"0123456789012\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "pattern": "^[0-9]{8,14}$",
+          "patternHelp": "8-14 digit number (UPC, EAN, ISBN)."
+        }
+      }
+    }
+  },
+  "ec_mpn": {
+    "id": "ec_mpn",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "property": "product:mpn"
+    },
+    "userInfo": {
+      "label": "Manufacturer Part Number (MPN)",
+      "description": "Manufacturer Part Number.",
+      "exampleOutput": "<meta property=\"product:mpn\" content=\"XYZ789\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        }
+      }
+    }
+  },
+  "ec_rating_value": {
+    "id": "ec_rating_value",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "itemprop": "ratingValue"
+    },
+    "userInfo": {
+      "label": "Product Rating Value",
+      "description": "Average rating of the product (e.g., 4.5).",
+      "exampleOutput": "<meta itemprop=\"ratingValue\" content=\"4.5\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "number",
+        "validation": {
+          "type": "number",
+          "min": 0,
+          "max": 5
+        }
+      }
+    }
+  },
+  "ec_review_count": {
+    "id": "ec_review_count",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "itemprop": "reviewCount"
+    },
+    "userInfo": {
+      "label": "Product Review Count",
+      "description": "Total number of reviews for the product.",
+      "exampleOutput": "<meta itemprop=\"reviewCount\" content=\"123\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "number",
+        "validation": {
+          "type": "number",
+          "min": 0,
+          "integer": true
+        }
+      }
+    }
+  },
+  "twitter_label1": {
+    "id": "twitter_label1",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:label1"
+    },
+    "userInfo": {
+      "label": "Twitter Product Label 1",
+      "description": "Label for a product attribute on a Twitter card.",
+      "exampleOutput": "<meta name=\"twitter:label1\" content=\"Price\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "maxLength": 50
+        }
+      }
+    }
+  },
+  "twitter_data1": {
+    "id": "twitter_data1",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:data1"
+    },
+    "userInfo": {
+      "label": "Twitter Product Data 1",
+      "description": "Data for a product attribute on a Twitter card.",
+      "exampleOutput": "<meta name=\"twitter:data1\" content=\"$149.99\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "maxLength": 100
+        }
+      }
+    }
+  },
+  "twitter_label2": {
+    "id": "twitter_label2",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:label2"
+    },
+    "userInfo": {
+      "label": "Twitter Product Label 2",
+      "description": "Label for a second product attribute on a Twitter card.",
+      "exampleOutput": "<meta name=\"twitter:label2\" content=\"Availability\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "maxLength": 50
+        }
+      }
+    }
+  },
+  "twitter_data2": {
+    "id": "twitter_data2",
+    "multipleAllowed": false,
+    "tag": "meta",
+    "presetAttributes": {
+      "name": "twitter:data2"
+    },
+    "userInfo": {
+      "label": "Twitter Product Data 2",
+      "description": "Data for a second product attribute on a Twitter card.",
+      "exampleOutput": "<meta name=\"twitter:data2\" content=\"In Stock\">"
+    },
+    "inputs": {
+      "content": {
+        "type": "text",
+        "validation": {
+          "type": "string",
+          "maxLength": 100
+        }
+      }
+    }
+  }
+}

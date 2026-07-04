@@ -1,0 +1,65 @@
+:root {
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --text-secondary: #6B7280; /* From style guide */
+  --primary-color: #00A69C; /* Keeping the original SVG color as primary */
+  --primary-color-rgb: 0, 166, 156; /* RGB for #00A69C */
+  --header-bg: #fff;
+  --border-color: #e0e0e0;
+  --card-bg: #fff;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --button-bg: #00A69C;
+  --button-text: #fff;
+  --button-hover-bg: #008c7f;
+  --error-color: #EF4444; /* Red from style guide */
+  --success: #10B981; /* Green from style guide */
+  --warning: #F59E0B; /* Amber from style guide */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --text-secondary: #CBD5E1; /* From style guide */
+    --primary-color: #00D1C2; /* Lighter shade for dark mode */
+    --primary-color-rgb: 0, 209, 194; /* RGB for #00D1C2 */
+    --header-bg: #2b2b2b;
+    --border-color: #444;
+    --card-bg: #333;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --button-bg: #00D1C2;
+    --button-text: #1a1a1a;
+    --button-hover-bg: #00A69C;
+    --error-color: #F87171; /* Brighter red for dark mode from style guide */
+    --success: #34D399; /* Brighter green for dark mode from style guide */
+    --warning: #FBBF24; /* Brighter amber for dark mode from style guide */
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.main-header {
+  background-color: var(--header-bg);
+  border-bottom-color: var(--border-color);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+.logo-container .app-name {
+  color: var(--text-color);
+}
+
+.logo-container .logo polygon,
+.main-nav .icon-home polygon {
+    stroke: var(--primary-color);
+}
+
+.main-nav .nav-link:hover {
+  background-color: var(--border-color);
+}

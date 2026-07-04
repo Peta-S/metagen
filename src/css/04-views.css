@@ -1,0 +1,442 @@
+/* src/css/components.css */
+.f-link { transition: all .5s ease; }
+.f-link:hover { filter: brightness(85%);}
+/* Landing Page Choice Cards */
+.choice-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem; /* 32px from spacing scale */
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.choice-card {
+  /* Reset button styles */
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  text-align: left;
+  font-family: var(--font-sans);
+  
+  /* Card styles from style guide */
+  padding: 1.5rem; /* 24px */
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--text-color); /* Ensure text color is inherited */
+}
+
+.choice-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* Slightly increased shadow on hover */
+}
+
+.choice-card-icon {
+  color: var(--primary-color);
+  margin-bottom: 1rem; /* 16px */
+  line-height: 1; /* Ensure no extra space around SVG */
+}
+
+.choice-card-icon svg {
+  display: block; /* Remove extra space below inline svg */
+}
+
+.choice-card-title {
+  font-size: 1.25rem; /* H4 from style guide (20px) */
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem; /* 8px */
+}
+
+.choice-card-description {
+  font-size: 1rem; /* Body from style guide (16px) */
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Landing Page Title */
+.landing-title {
+  font-size: 1.875rem; /* H2 from style guide (30px) */
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 2.5rem; /* ~40px */
+}
+
+/* Download Template Button Adjustment */
+#download-template-btn {
+  margin-top: 2rem; /* 32px */
+}
+
+/* CSV Upload View */
+.upload-drop-zone {
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 3rem 2rem; /* 48px top/bottom, 32px left/right */
+  text-align: center;
+  background-color: var(--card-bg); /* Use card background for consistency */
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem; /* 12px for spacing between elements */
+  width: 100%;
+  max-width: 500px; /* Limit width for better appearance */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.upload-drop-zone:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb), 0.05); /* Subtle primary color tint on hover */
+}
+
+.upload-drop-zone .drop-zone-text {
+  font-size: 1.125rem; /* Body Large from style guide */
+  color: var(--text-color);
+  margin: 0;
+}
+
+.upload-drop-zone .drop-zone-text-or {
+  font-size: 0.875rem; /* Body Small from style guide */
+  color: var(--text-secondary);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.navigation-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px; /* Match form width */
+  margin-top: 2rem; /* 32px */
+  gap: 1rem; /* 16px between buttons */
+}
+
+/* Collapsible Sections for Manual Entry */
+.collapsible-section {
+  width: 100%;
+  max-width: 600px; /* Match form width */
+  margin-top: 1.5rem; /* 24px */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  overflow: hidden; /* Contains children, especially when content is hidden */
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem; /* 16px top/bottom, 24px left/right */
+  background-color: var(--card-bg);
+  color: var(--primary-color);
+  font-size: 1.125rem; /* Body Large */
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.collapsible-header:hover {
+  background-color: var(--border-color); /* Subtle hover effect */
+}
+
+.collapsible-icon {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.collapsible-icon::before,
+.collapsible-icon::after {
+  content: '';
+  position: absolute;
+  background-color: var(--primary-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.collapsible-icon::before {
+  width: 100%;
+  height: 2px;
+}
+
+.collapsible-icon::after {
+  width: 2px;
+  height: 100%;
+}
+
+.collapsible-header.is-open .collapsible-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg); /* Rotate to make it a horizontal line */
+}
+
+.collapsible-content {
+  padding: 1rem 1.5rem; /* Match header padding */
+  border-top: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.collapsible-content.is-open {
+  max-height: 500px; /* Arbitrary large value to allow content to show */
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Output View */
+.output-view-content {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem; /* Space before navigation controls */
+}
+
+.status-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
+}
+
+.status-message {
+  font-size: 1.125rem; /* Body Large */
+  font-weight: 500;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+.status-message.success-message {
+  background-color: var(--success); /* From style guide (10B981) */
+  color: #fff;
+}
+
+.status-message.warning-message {
+  background-color: var(--warning); /* From style guide (F59E0B) */
+  color: #fff;
+}
+
+.status-message.error-message {
+  background-color: var(--error-color);
+  color: #fff;
+}
+
+.validation-status-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem; /* Body Small */
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.validation-status-button:hover {
+  background-color: var(--border-color);
+}
+
+.validation-status-button svg {
+  color: var(--warning); /* Use warning color for icon by default */
+}
+
+.status-text {
+  font-weight: 500;
+}
+
+.page-context {
+  font-size: 0.875rem; /* Body Small */
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.tabs-container {
+  width: 100%;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.tab-buttons {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tab-button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-secondary);
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.tab-button:hover:not(.active) {
+  color: var(--text-color);
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: var(--background-color); /* Differentiate active tab visually */
+}
+
+.tab-content {
+  padding: 1.5rem;
+  display: none;
+  position: relative; /* For copy button positioning */
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.code-block {
+  background-color: var(--background-color); /* Use background color for code block */
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: var(--font-mono); /* From style guide */
+  font-size: 0.875rem; /* Code size */
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.copy-all-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.output-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page-navigation {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page-navigation .btn-ghost {
+  padding: 0.75rem 1.25rem; /* Larger padding for navigation buttons */
+}
+
+/* Specific styling for navigation-controls on output page to contain two buttons */
+.view-container > .navigation-controls {
+  width: 100%;
+  max-width: 800px; /* Match output-view-content width */
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Modal Component */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.modal-close-btn:hover {
+  color: var(--text-color);
+}
+
+.modal-body {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.modal-footer {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
