@@ -8,3 +8,6 @@
 
 ## Target Audience
 **Meta Gen** is designed for non-technicial users such as marketing personnel and new developers. 
+
+## The Result
+**Meta Gen** was developed by earlier (free) AI models (Gemini). For this reason be aware that there is some redundant code. Furthermore, there are many improvements that could be done to improve the UX. However, as this is only a demonstration, I don't see the need for additionally prompting : )
