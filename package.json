@@ -1,0 +1,19 @@
+{
+  "name": "metaforge",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "prod": "parcel build src/index.html --no-source-maps"
+  },
+  "keywords": [],
+  "author": "Peta Stewart",
+  "license": "ISC",
+  "description": "",
+  "@parcel/optimizer-terser": {
+    "terserOptions": {
+      "format": {
+        "comments": false
+      }
+    }
+  }
+}
